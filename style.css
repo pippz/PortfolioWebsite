@@ -27,6 +27,7 @@
     --quote-important: #9060ff;
     --svg-normal: #9060ff;
     --svg-glow: #7032ff;
+    --logo-svg: #c4b5fd;
 
     --orb1: radial-gradient(circle at 35% 35%, #c4b5fd, #8b5cf6, #4c1d95);
     --orb2: radial-gradient(circle at 35% 35%, #8b5cf6, #3d2a6e, #1a1330);
@@ -65,6 +66,7 @@
     --quote-important: #1e3a8a;
     --svg-normal: #2563eb;
     --svg-glow: #60a5fa;
+    --logo-svg: #e0e7ff;
 
     --orb1: radial-gradient(circle at 35% 35%, #93f5ff, #3b82f6, #1e40af);
     --orb2: radial-gradient(circle at 35% 35%, #bfdbfe, #60a5fa, #2563eb);
@@ -88,7 +90,7 @@ body {
     display: block;
     background: var(--bg);
     background: var(--bg-gradient);
-    transition: background 0.4s ease;
+    transition: background 0.4s ease, opacity 0.5s ease;
 }
 
 main {
@@ -329,6 +331,10 @@ header span {
     50% { transform: translateY(6px); }
 }
 
+#loader {
+    stroke: var(--logo-svg);
+}
+
 /* ── Quotes ── */
 .quote {
     text-align: center;
@@ -350,7 +356,7 @@ header span {
 
 .cite {
     margin-top: 100px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     text-align: center;
     padding: 60px 20px;
     font-family: 'Lora', serif;
