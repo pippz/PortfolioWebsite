@@ -570,7 +570,7 @@ header span {
 /* ── SVG line ── */
 #scroll-line {
     position: absolute;
-    top: 25%;
+    top: 25.2%;
     left: 37%;
     transform: translateX(-50%);
     pointer-events: none;
