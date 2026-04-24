@@ -38,27 +38,18 @@
 
 /* ── Light mode color ──  */
 .light-mode {
-    /* Background: A crisp, tinted base so the glass layers actually stand out */
     --bg: #e0e7ff; 
     --bg-gradient: linear-gradient(90deg, #e0e7ff 0%, #c8e1ff 50%, #b4ccff 100%);
-    
-    /* Typography: Deep Midnight Navy for that sharp, professional look */
     --text-primary: #0f172a;
     --text-secondary: #475569;
     --text-accent: #2563eb;
-    
-    /* Navigation: Follows your original 0.05 / 0.1 opacity logic */
     --nav-bg: rgba(255, 255, 255, 0.4); 
     --nav-border: rgba(37, 99, 235, 0.2);
     --link-hover: rgba(37, 99, 235, 0.1);
-    
-    /* Cards: Clean white glass with a blue-tinted border */
     --card-bg: rgba(255, 255, 255, 0.5);
     --card-border: rgba(37, 99, 235, 0.15);
     --card-hover-bg: rgba(255, 255, 255, 0.8);
     --card-hover-border: #2563eb;
-    
-    /* Project Items & Tags */
     --project-item-bg: rgba(255, 255, 255, 0.3);
     --project-item-border: rgba(37, 99, 235, 0.1);
     --project-tag: #2563eb;
@@ -75,8 +66,6 @@
     --svg-normal: #2563eb;
     --svg-glow: #60a5fa;
 
-    /* --- THE 6 UNIFIED COBALT ORBS --- */
-    /* All orbs follow the Cyan -> Cobalt -> Deep Navy logic for a tight, pro look */
     --orb1: radial-gradient(circle at 35% 35%, #93f5ff, #3b82f6, #1e40af);
     --orb2: radial-gradient(circle at 35% 35%, #bfdbfe, #60a5fa, #2563eb);
     --orb3: radial-gradient(circle at 35% 35%, #ffffff, #93c2ff, #3b82f6);
