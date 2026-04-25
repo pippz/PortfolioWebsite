@@ -83,7 +83,7 @@ function textTypingEffect(element, text, i = 0) {
     }
 }
 
-// ── Intersection Observer Settings ──
+// ── Intersection Observer Settings ── //
 const observerOptions = {
     root: null, // use the viewport
     rootMargin: '0px 0px -50px 0px', // -50px means it triggers 50px AFTER it enters the view
