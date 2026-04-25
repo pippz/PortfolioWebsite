@@ -1,3 +1,34 @@
+
+/* ── Loader function ── */
+document.body.style.overflow = 'hidden';
+window.onload = function() {
+    var loader = document.getElementById('loader');
+    var paths = document.querySelectorAll('.loader-path');
+    var lengths = [3000, 1000, 200, 2500, 800];
+
+        setTimeout(function() {
+            paths.forEach(function(path, i) {
+                path.style.transition = 'stroke-dashoffset ' + (1.4 + i * 0.2) + 's cubic-bezier(0.4, 0, 0.2, 1)';
+                path.style.strokeDashoffset = '0';
+        });
+
+        setTimeout(function() {
+            paths.forEach(function(path, i) {
+                path.style.transition = 'stroke-dashoffset ' + (1.2 + i * 0.15) + 's cubic-bezier(0.4, 0, 0.2, 1)';
+                path.style.strokeDashoffset = lengths[i];
+            });
+
+            setTimeout(function() {
+                loader.style.transition = 'opacity 0.8s ease';
+                loader.style.opacity = '0';
+                document.body.style.overflow = '';
+                setTimeout(function() { loader.style.display = 'none'; }, 800);
+            }, 1400);
+        }, 1000);
+    }, 400);
+};
+
+
 /* ── Footer function ── */
 window.addEventListener("scroll", function() { 
     const footer = document.querySelector("footer");

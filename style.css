@@ -28,6 +28,7 @@
     --svg-normal: #9060ff;
     --svg-glow: #7032ff;
     --logo-svg: #c4b5fd;
+    --hero-logo: #ccb7fdc7;
 
     --orb1: radial-gradient(circle at 35% 35%, #c4b5fd, #8b5cf6, #4c1d95);
     --orb2: radial-gradient(circle at 35% 35%, #8b5cf6, #3d2a6e, #1a1330);
@@ -40,7 +41,7 @@
 /* ── Light mode color ──  */
 .light-mode {
     --bg: #e0e7ff; 
-    --bg-gradient: linear-gradient(90deg, #e0e7ff 0%, #c8e1ff 50%, #b4ccff 100%);
+    --bg-gradient: linear-gradient(90deg, #cce2ff 0%, #b9d9ff 50%, #a8c3ff 100%);
     --text-primary: #0f172a;
     --text-secondary: #475569;
     --text-accent: #2563eb;
@@ -67,6 +68,7 @@
     --svg-normal: #2563eb;
     --svg-glow: #60a5fa;
     --logo-svg: #e0e7ff;
+    --hero-logo: #8fadee;
 
     --orb1: radial-gradient(circle at 35% 35%, #93f5ff, #3b82f6, #1e40af);
     --orb2: radial-gradient(circle at 35% 35%, #bfdbfe, #60a5fa, #2563eb);
@@ -218,17 +220,26 @@ header span {
     padding-top: 80px;
     position: relative;
     width: 100%;
-    height: 79vh;
-    overflow: hidden;
+    min-height: 79vh;
+    overflow: visible;
+}
+
+#heroLogo {
+    position: absolute;
+    top: 28%;
+    left: 32%;
+    stroke: var(--hero-logo);
+    z-index: 2;
+    opacity: 0.9;
 }
 
 /* ── Orbs ── */ 
 
 #orb1 { width: 200px; height: 200px; background: var(--orb1); top: 20%; left: 15%; animation-duration: 6s; }
-#orb2 { width: 180px; height: 180px; background: var(--orb2); top: 50%; left: 50%; animation-duration: 8s; }
+#orb2 { width: 180px; height: 180px; background: var(--orb2); top: 72%; left: 50%; animation-duration: 8s; }
 #orb3 { width: 160px; height: 160px; background: var(--orb3); top: 25%; left: 70%; animation-duration: 7s; }
 #orb4 { width: 80px;  height: 80px;  background: var(--orb4); top: 60%; left: 20%; animation-duration: 5s; }
-#orb5 { width: 60px;  height: 60px;  background: var(--orb5); top: 15%; left: 45%; animation-duration: 4s; }
+#orb5 { width: 60px;  height: 60px;  background: var(--orb5); top: 12%; left: 45%; animation-duration: 4s; }
 #orb6 { width: 70px;  height: 70px;  background: var(--orb6); top: 70%; left: 75%; animation-duration: 6s; }
 
 /* ── Big orb ── */
