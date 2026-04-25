@@ -650,36 +650,6 @@ footer a:hover {
     
     .bg-watermark { font-size: 35vw; }
 
-    #orb1 {
-        width: 160px;
-        height: 160px;
-    }
-
-    #orb2 {
-        width: 140px;
-        height: 140px;
-    }
-
-    #orb3 {
-        width: 130px;
-        height: 130px;
-    }
-
-    #orb4 {
-        top: 35%;
-        left: 10%;
-    }
-
-    #orb5 {
-        top: 10%;
-        left: 40%;
-    }
-
-    #orb6 {
-        top: 40%;
-        left: 75%;
-    }
-
     #homePage {
         height: 50vh;
     }
@@ -739,28 +709,6 @@ footer a:hover {
 
     #homePage {
         height: 35vh;
-    }
-
-    #orb1 {
-        width: 130px;
-        height: 130px;
-        left: 5%; 
-    }
-
-    #orb2 {
-        width: 110px;
-        height: 110px;
-        top: 60%;
-    }
-
-    #orb3 {
-        width: 100px;
-        height: 100px;
-        left: 60%;
-    }
-
-    #orb4, #orb5, #orb6 {
-        display: none ;
     }
 
     /* Projects - Mobile */
