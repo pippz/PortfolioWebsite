@@ -74,6 +74,11 @@
     scrollbar-color: var(--scrollbar-thumb) transparent;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     position: relative;
     margin: 0;
@@ -82,6 +87,9 @@ body {
     display: block;
     background: var(--bg);
     background: var(--bg-gradient);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     transition: background 0.4s ease, opacity 0.5s ease;
 }
 
@@ -220,11 +228,14 @@ header span {
 
 #heroLogo {
     position: absolute;
-    top: 29%;
-    left: 32%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     stroke: var(--hero-logo);
     z-index: 2;
     opacity: 0.9;
+    width: 700;
+    height: 380;
 }
 
 /* ── Theme button ── */ 
@@ -634,47 +645,101 @@ footer a:hover {
     cursor: pointer;
 }
 
-/* ── Responsiveness Ipad ── */
+@media (max-width: 1800px) {
+    #scroll-line {
+        display: none;
+    }
+
+    #pippzhome{
+        display: none;
+    }
+}
+
+/* ipad */
 @media (max-width: 1024px) {
-    /* Projects & About - Tablet */
+
+    #logo {
+        display: none;
+    }
+
+    /* Hero */
+    #homePage {
+        min-height: 100vh;
+        padding: 100px 20px 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Quote */
+    .quote,
+    .cite {
+        font-size: 36px;
+        padding: 40px 20px;
+    }
+
+    /* Projects */
     .project-row {
-        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
         padding: 25px;
     }
 
-    .about-grid { gap: 60px; }
+    .project-info {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    /* About */
     .about-content {
-        width: 80% !important;
-        min-width: unset;
-    }
-    
-    .bg-watermark { font-size: 35vw; }
-
-    #homePage {
-        height: 50vh;
+        width: 80%;
+        margin: 0 auto;
     }
 
-    footer {
-        left: 0;
-        padding: 0;
-        align-items: center;
+    .about-card.left,
+    .about-card.right {
         justify-content: center;
     }
 
-    footer:hover, footer.visible {
-        height: 190px;
+    .pippztext {
+        display: none;
     }
 
-    footer h4, footer a {
-        margin-top: -10px;
-        margin-left: 50px;
+    /* Navbar */
+    header {
+        justify-content: center;
+    }
+
+    #links {
+        position: static;
+        transform: none;
+        margin-right: 90px;
+    }
+
+    /* Footer */
+    footer {
+        position: relative;
+        height: auto;
+        padding: 40px 20px;
+        align-items: center;
+    }
+
+    footer h4,
+    footer a {
+        margin: 10px 0;
+        opacity: 1;
     }
 }
 
-/* ── Responsiveness Phone ── */
+
+/* phone */
 @media (max-width: 768px) {
+
+    /* Header */
     header {
-        padding: 16px 20px;
+        padding: 16px;
         justify-content: center;
     }
 
@@ -682,160 +747,132 @@ footer a:hover {
         display: none;
     }
 
-    #theme-toggle {
-        position: fixed;
-        top: 25px;
-        right: 10px;
-    }
-
     #links {
-        gap: 16px;
-        padding: 10px 16px;
-        left: 50%;
-        transform: translateX(-50%);
-        position: static;
-        transform: none;
-        margin-left: -40px;
+        gap: 12px;
+        padding: 10px 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-left: 50px;
     }
 
     #links a {
-        font-size: 13px;
-        padding: 4px 8px;
+        font-size: 14px;
     }
 
-    #explore-text {
-        margin-top: 0;
+    #heroLogo {
+        width: 400;
+        height: 240;
     }
 
+    /* Hero */
     #homePage {
-        height: 35vh;
+        padding: 120px 15px 60px;
+        text-align: center;
+        min-height: 59vh; 
     }
 
-    /* Projects - Mobile */
-    .project-info { gap: 10px; flex-wrap: wrap; }
-    .project-row { transform: none !important; padding: 20px; }
-    .project-tech { margin-left: 0; width: 100%; font-size: 0.75rem; }
-
-    /* About Section - Mobile */
-    .about-item.left, .about-item.right {
-        justify-content: center !important;
+    #heroLogo {
+        max-width: 90%;
     }
 
+    /* Quote */
+    .quote,
+    .cite {
+        font-size: 24px;
+        padding: 30px 15px;
+    }
+
+    /* Projects */
+    .project-row {
+        padding: 20px;
+    }
+
+    .project-name {
+        font-size: 1.4rem;
+    }
+
+    .project-number {
+        display: none;
+    }
+
+    .project-tech {
+        width: 100%;
+        font-size: 0.75rem;
+    }
+
+    /* About */
     .about-content {
-        width: 95% !important;
-        padding: 30px 20px;
+        width: 95%;
+        padding: 25px 20px;
         text-align: center;
     }
 
-    .about-content::before { display: none; } /* Rimuove le linee laterali */
-
-    .about-content p { font-size: 1.3rem; }
-
-    .bg-watermark {
-        font-size: 45vw;
-        top: 60%;
-        opacity: 0.01;
+    .about-content p {
+        font-size: 1.3rem;
     }
 
-    footer {
-        padding: 0;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
-
-    footer:hover, footer.visible {
-        height: 160px;
-    }
-
-    footer h4, footer a {
-        margin-top: -8px;
-        margin-left: 50px;
-    }
-}
-
-/* ── Responsiveness smaller phone ── */
-@media (max-width: 445px) {
-    header {
-        padding: 16px 20px;
-        justify-content: center;
-    }
-
-    #logo {
+    .about-content::before {
         display: none;
     }
 
-    #theme-toggle {
-        position: fixed;
-        top: 75px;
-        right: 10px;
+    /* Watermark */
+    .pippztext {
+        font-size: 40vw;
+        opacity: 0.02;
     }
 
+    /* Footer */
+    footer {
+        padding: 30px 15px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 474px) {
     #links {
-        gap: 16px;
-        padding: 10px 16px;
-        left: 50%;
-        transform: translateX(-50%);
-        position: static;
-        transform: none;
-        margin-left: -40px;
+        padding: 6px 16px;
+        gap: 5px;
     }
 
     #links a {
-        font-size: 13px;
-        padding: 4px 8px;
+        font-size: 10px;
     }
+}
 
-    #explore-text {
-        margin-top: 0;
-    }
+/* small phone */
+@media (max-width: 445px) {
 
+    /* Hero spacing */
     #homePage {
-        height: 35vh;
+        padding-top: 140px;
     }
 
-    #orb1 {
-        width: 130px;
-        height: 130px;
-        left: 5%; 
+    /* Text scaling */
+    .quote,
+    .cite {
+        font-size: 18px;
     }
 
-    #orb2 {
-        width: 110px;
-        height: 110px;
-        top: 60%;
+    .project-name {
+        font-size: 1.2rem;
     }
 
-    #orb3 {
-        width: 100px;
-        height: 100px;
-        left: 60%;
+    .about-content p {
+        font-size: 1.1rem;
     }
 
-    #orb4, #orb5, #orb6 {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
+    /* Watermark */
+    .pippztext {
+        font-size: 50vw;
+        opacity: 0.015;
     }
+}
 
-    .quote { font-size: 19px; padding: 30px 10px; }
-    .project-name { font-size: 1.3rem; }
-    .project-number { display: none; }
-    .about-content p { font-size: 1.1rem; }
-
-    footer {
+@media (max-width: 401px) {
+    #links {
         padding: 0;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
-
-    footer:hover, footer.visible {
-        height: 160px;
-    }
-
-    footer h4, footer a {
-        margin-right: 150px;
+        background-color: transparent;
+        border: none;
     }
 }
 
