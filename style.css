@@ -29,13 +29,8 @@
     --svg-glow: #7032ff;
     --logo-svg: #c4b5fd;
     --hero-logo: #ccb7fdc7;
-
-    --orb1: radial-gradient(circle at 35% 35%, #c4b5fd, #8b5cf6, #4c1d95);
-    --orb2: radial-gradient(circle at 35% 35%, #8b5cf6, #3d2a6e, #1a1330);
-    --orb3: radial-gradient(circle at 35% 35%, #f3eeff, #c4b5fd, #8b5cf6);
-    --orb4: radial-gradient(circle at 35% 35%, #8b5cf6, #3d2a6e, #1a1330);
-    --orb5: radial-gradient(circle at 35% 35%, #f3eeff, #c4b5fd, #8b5cf6);
-    --orb6: radial-gradient(circle at 35% 35%, #c4b5fd, #8b5cf6, #4c1d95);
+    --link-hover: #9060ff;
+    --watermark: #ede8f5;
 }
 
 /* ── Light mode color ──  */
@@ -69,13 +64,8 @@
     --svg-glow: #60a5fa;
     --logo-svg: #e0e7ff;
     --hero-logo: #8fadee;
-
-    --orb1: radial-gradient(circle at 35% 35%, #93f5ff, #3b82f6, #1e40af);
-    --orb2: radial-gradient(circle at 35% 35%, #bfdbfe, #60a5fa, #2563eb);
-    --orb3: radial-gradient(circle at 35% 35%, #ffffff, #93c2ff, #3b82f6);
-    --orb4: radial-gradient(circle at 35% 35%, #dbeafe, #3b82f6, #1e3a8a);
-    --orb5: radial-gradient(circle at 35% 35%, #ffffff, #90c2ff, #60a5fa);
-    --orb6: radial-gradient(circle at 35% 35%, #3b82f6, #1e40af, #0f172a);
+    --link-hover: #2563eb;
+    --watermark: #00040e;
 }
 
 * {
@@ -185,7 +175,7 @@ header span {
 }
 
 #links a:hover {
-    color: var(--explore-glow);
+    color: var(--link-hover);
     cursor: pointer;
 }
 
@@ -197,6 +187,10 @@ header span {
     height: 1.2em; 
     vertical-align: middle;
     position: relative;
+}
+
+#links span:hover {
+    cursor: pointer;
 }
 
 #links a span::before,
@@ -226,54 +220,11 @@ header span {
 
 #heroLogo {
     position: absolute;
-    top: 28%;
+    top: 29%;
     left: 32%;
     stroke: var(--hero-logo);
     z-index: 2;
     opacity: 0.9;
-}
-
-/* ── Orbs ── */ 
-
-#orb1 { width: 200px; height: 200px; background: var(--orb1); top: 20%; left: 15%; animation-duration: 6s; }
-#orb2 { width: 180px; height: 180px; background: var(--orb2); top: 72%; left: 50%; animation-duration: 8s; }
-#orb3 { width: 160px; height: 160px; background: var(--orb3); top: 25%; left: 70%; animation-duration: 7s; }
-#orb4 { width: 80px;  height: 80px;  background: var(--orb4); top: 60%; left: 20%; animation-duration: 5s; }
-#orb5 { width: 60px;  height: 60px;  background: var(--orb5); top: 12%; left: 45%; animation-duration: 4s; }
-#orb6 { width: 70px;  height: 70px;  background: var(--orb6); top: 70%; left: 75%; animation-duration: 6s; }
-
-/* ── Big orb ── */
-.orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(2px);
-    opacity: 0.5;
-    pointer-events: auto;
-    z-index: 0;
-    transition: transform 0.3s ease;
-    animation: wobble 6s ease-in-out infinite;
-}
-
-.orb:hover {
-    transform: scale(1.1);
-    opacity: 0.8;
-}
-
-/* ── Small orb ── */
-.small-orb {
-    position: fixed;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.small-orb:hover {
-    transform: translate(0px, 0px) scale(1.15) !important;
-    opacity: 0.9;
-}
-
-@keyframes wobble {
-    0%, 100% { translate: 0px 0px; }
-    33% { translate: 15px -10px; }
-    66% { translate: -10px 12px; }
 }
 
 /* ── Theme button ── */ 
@@ -313,7 +264,7 @@ header span {
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    margin-bottom: 32px;
+    margin-bottom: 0px;
 }
 
 #explore-text {
@@ -344,6 +295,14 @@ header span {
 
 #loader {
     stroke: var(--logo-svg);
+}
+
+#pippzhome {
+    position: absolute;
+    top: -3%;
+    left: -3%;
+    font-size: 36vw;
+    font-weight: 900;
 }
 
 /* ── Quotes ── */
@@ -506,7 +465,7 @@ header span {
     top: 40%;
     font-size: 32vw;
     font-weight: 900;
-    color: var(--text-primary);
+    color: var(--watermark);
     opacity: 0.020; 
     z-index: -2;
     letter-spacing: 20px; 
@@ -616,7 +575,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 45px;
+    height: 0px;
     overflow: hidden;
     transition: height 0.4s ease;
     background: var(--footer-bg);
@@ -629,10 +588,6 @@ footer {
     align-items: center;
     padding: 0 20px;
     z-index: 2;
-}
-
-footer:hover {
-    height: 200px;
 }
 
 footer.visible {
