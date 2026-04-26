@@ -29,6 +29,44 @@ window.onload = function() {
 };
 
 
+/* ── Header Logo ── */
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 600) {
+        document.querySelector('#headerLogo').classList.add('visible');
+    } else {
+        document.querySelector('#headerLogo').classList.remove('visible');
+    }
+});
+
+/* ── Header Logo ── */
+const logoPaths = document.querySelectorAll('#headerLogo .loader-path');
+const logoLengths = [3000, 1000, 200, 2500, 800];
+let logoAnimating = false;
+
+document.querySelector('#headerLogo').addEventListener('mouseenter', function() {
+    if (logoAnimating) return;
+    logoAnimating = true;
+
+    // erase
+    logoPaths.forEach(function(path, i) {
+        path.style.transition = 'stroke-dashoffset ' + (0.6 + i * 0.1) + 's cubic-bezier(0.4, 0, 0.2, 1)';
+        path.style.strokeDashoffset = logoLengths[i];
+    });
+
+    // rewrite
+    setTimeout(function() {
+        logoPaths.forEach(function(path, i) {
+            path.style.transition = 'stroke-dashoffset ' + (0.6 + i * 0.1) + 's cubic-bezier(0.4, 0, 0.2, 1)';
+            path.style.strokeDashoffset = '0';
+        });
+
+        setTimeout(function() {
+            logoAnimating = false;
+        }, 800);
+    }, 1000);
+});
+
+
 /* ── Footer function ── */
 window.addEventListener("scroll", function() { 
     const footer = document.querySelector("footer");

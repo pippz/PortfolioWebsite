@@ -1,13 +1,20 @@
 /* ── Theme color ── */
 :root {
+    /* ──Background── */
     --bg: #0D0B12;
     --bg-gradient: linear-gradient(90deg, rgba(13,11,18,1) 0%, rgba(26,19,48,1) 50%, rgba(61,42,110,1) 100%);
+
+    /* ──Text── */
     --text-primary: #ede8f5;
     --text-secondary: #7c6f9a;
     --text-accent: #c4b5fd;
+
+    /* ──Header── */
     --nav-bg: rgba(255,255,255,0.05);
     --nav-border: rgba(255,255,255,0.1);
-    --link-hover: rgba(209,160,255,0.15);
+    --link-hover: #9060ff;
+
+    /* ──Cards── */
     --card-bg: #c3b5fd17;
     --card-border: rgba(139,92,246,0.2);
     --card-hover-bg: #af9fee4b;
@@ -15,34 +22,53 @@
     --project-item-bg: rgba(255,255,255,0.05);
     --project-item-border: rgba(139,92,246,0.2);
     --project-tag: #c4b5fd;
+
+    /* ──Footer── */
     --footer-bg: rgba(255,255,255,0.05);
     --footer-border: rgba(255,255,255,0.08);
     --footer-link-hover: rgba(209,160,255,0.15);
+
+    /* ──Explore section── */
     --explore-color: #7c6f9a;
     --explore-glow: #c4b5fd;
+
+    /* ──Scrollbar── */
     --scrollbar-thumb: rgba(138,92,246,0.596);
     --scrollbar-thumb-hover: rgba(195,181,253,0.747);
     --scrollbar-border: rgba(138,92,246,0.329);
+
+    /* ──Quote── */
     --quote-text: #c4b5fd;
     --quote-important: #9060ff;
+
+    /* ──SVGs── */
     --svg-normal: #9060ff;
     --svg-glow: #7032ff;
     --logo-svg: #c4b5fd;
     --hero-logo: #ccb7fdc7;
-    --link-hover: #9060ff;
+    --header-logo: #ccb7fdc7;
+
+    /* ──Watermarks── */
     --watermark: #ede8f5;
 }
 
 /* ── Light mode color ──  */
 .light-mode {
+    /* ──Background── */
     --bg: #e0e7ff; 
     --bg-gradient: linear-gradient(90deg, #cce2ff 0%, #b9d9ff 50%, #a8c3ff 100%);
+
+    /* ──Text── */
     --text-primary: #0f172a;
     --text-secondary: #475569;
     --text-accent: #2563eb;
+
+    /* ──Header── */
     --nav-bg: rgba(255, 255, 255, 0.4); 
     --nav-border: rgba(37, 99, 235, 0.2);
-    --link-hover: rgba(37, 99, 235, 0.1);
+    --link-hover: #2563eb;
+
+    /* ──Cards── */
     --card-bg: rgba(255, 255, 255, 0.5);
     --card-border: rgba(37, 99, 235, 0.15);
     --card-hover-bg: rgba(255, 255, 255, 0.8);
@@ -50,21 +76,33 @@
     --project-item-bg: rgba(255, 255, 255, 0.3);
     --project-item-border: rgba(37, 99, 235, 0.1);
     --project-tag: #2563eb;
+
+    /* ──Footer── */
     --footer-bg: rgba(255, 255, 255, 0.3);
     --footer-border: rgba(37, 99, 235, 0.15);
     --footer-link-hover: rgba(37, 99, 235, 0.1);
+
+    /* ──Explore section── */
     --explore-color: #475569;
     --explore-glow: #60a5fa;
+
+    /* ──Scrollbar── */
     --scrollbar-thumb: rgba(37, 99, 235, 0.4);
     --scrollbar-thumb-hover: rgba(37, 99, 235, 0.7);
     --scrollbar-border: rgba(37, 99, 235, 0.1);
+
+    /* ──Quote── */
     --quote-text: #1d93d8;
     --quote-important: #1e3a8a;
+
+    /* ──SVGs── */
     --svg-normal: #2563eb;
     --svg-glow: #60a5fa;
     --logo-svg: #e0e7ff;
     --hero-logo: #8fadee;
-    --link-hover: #2563eb;
+    --header-logo: #2563eb;
+
+    /* ──Watermarks── */
     --watermark: #00040e;
 }
 
@@ -215,6 +253,17 @@ header span {
 
 #links a:hover span::after {
     transform: translateY(-100%);
+}
+
+#headerLogo {
+    stroke: var(--header-logo);
+    margin-right: 60px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#headerLogo.visible {
+    opacity: 1;
 }
 
 /* ── Homepage section ── */
