@@ -96,18 +96,6 @@ document.querySelector('#headerLogo').addEventListener('mouseenter', function() 
 });
 
 
-/* ── Footer function ── */
-window.addEventListener("scroll", function() { 
-    const footer = document.querySelector("footer");
-    const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 10;
-    if (atBottom) {
-        footer.classList.add("visible");
-    } else {
-        footer.classList.remove("visible");
-    }
-});
-
-
 /* ── Theme icon ── https://www.youtube.com/watch?v=_gKEUYarehE&t=220s*/
 const toggle = document.getElementById('theme-toggle');
 const icon = document.getElementById('theme-icon');

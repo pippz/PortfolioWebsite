@@ -50,6 +50,9 @@
 
     /* ──Watermarks── */
     --watermark: #ede8f5;
+
+    /* ──Theme── */
+    --theme-button: #9061ffc7; 
 }
 
 /* ── Light mode color ──  */
@@ -100,10 +103,13 @@
     --svg-glow: #60a5fa;
     --logo-svg: #e0e7ff;
     --hero-logo: #8fadee;
-    --header-logo: #2563eb;
+    --header-logo: #729fff;
 
     /* ──Watermarks── */
     --watermark: #00040e;
+
+    /* ──Theme── */
+    --theme-button: #8fadee; 
 }
 
 * {
@@ -309,7 +315,7 @@ header span {
 }
 
 #theme-toggle:hover {
-    background: var(--link-hover);
+    background: var(--theme-button);
     animation: spin 0.6s ease forwards;
 }
 
@@ -624,68 +630,64 @@ header span {
 }
 
 /* ── Footer ── */
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 0px;
-    overflow: hidden;
-    transition: height 0.4s ease;
+#contact {
+    position: absolute;
+    top: 95.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: var(--footer-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-top: 1px solid var(--footer-border);
+    width: 98%;
+    height: 350px;
+    border-radius: 30px;
+}
+
+#footerLogo {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    stroke: var(--text-primary);
+    z-index: 2;
+    opacity: 0.9;
+    width: 300px;
+    height: 180px; 
+}
+
+#footerdiv {
+    position: absolute;
+    top: 70%;
+    left: 49%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
-    justify-content: left;
-    align-items: center;
-    padding: 0 20px;
-    z-index: 2;
 }
 
-footer.visible {
-    height: 200px;
-}
-
-footer.visible p, footer.visible a, footer.visible h4 {
-    opacity: 1;
-}
-
-/* ── Copyright ── */
-footer h4 {
-    opacity: 0;
-    transition: opacity 0.45s ease;
+#contact h4{
     color: var(--text-primary);
     cursor: default;
-    margin-right: 60px;
+    margin-left: 30%;
 }
 
-footer:hover h4 {
-    opacity: 1;
-    transition-delay: 0.1s;
-}
-
-/* ── GitHub & Discord links ── */
-footer a {
-    color: var(--text-primary);
-    text-decoration: none;
-    opacity: 0;
-    padding: 7px 10px;
-    transition: opacity 0.3s ease;
-    margin-right: 60px;
+#footerlinks {
     gap: 5px;
 }
 
-footer:hover a {
-    opacity: 1;
-    transition-delay: 0.1s;
+#footerlinks a {
+    color: var(--text-primary);
+    text-decoration: none;
+    padding: 7px 10px;
+    border-radius: 25px;
 }
 
-footer a:hover {
-    background-color: var(--footer-link-hover);
-    border-radius: 18px;
-    cursor: pointer;
+#footerlinks a:hover {
+    background-color: var(--card-hover-bg);
 }
+
 
 @media (max-width: 1800px) {
     #pippzhome{
@@ -758,20 +760,6 @@ footer a:hover {
         position: static;
         transform: none;
         margin-right: 90px;
-    }
-
-    /* Footer */
-    footer {
-        position: relative;
-        height: auto;
-        padding: 40px 20px;
-        align-items: center;
-    }
-
-    footer h4,
-    footer a {
-        margin: 10px 0;
-        opacity: 1;
     }
 }
 
@@ -867,11 +855,12 @@ footer a:hover {
         font-size: 40vw;
         opacity: 0.02;
     }
+}
 
-    /* Footer */
-    footer {
-        padding: 30px 15px;
-        text-align: center;
+@media (max-width: 555px) {
+    #footerlinks {
+    display: flex;
+    flex-direction: column;
     }
 }
 
@@ -913,6 +902,11 @@ footer a:hover {
         font-size: 50vw;
         opacity: 0.015;
     }
+
+    #footerLogo {
+        width: 240px;
+        height: 120px;
+    }
 }
 
 @media (max-width: 401px) {
@@ -920,6 +914,13 @@ footer a:hover {
         padding: 0;
         background-color: transparent;
         border: none;
+    }
+}
+
+@media (max-width: 250px) {
+    #footerLogo {
+        width: 200px;
+        height: 80px;
     }
 }
 
