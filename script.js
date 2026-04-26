@@ -1,4 +1,33 @@
 
+/* ── Smooth momentum scroll ── */
+let currentY = window.scrollY;
+let targetY = window.scrollY;
+let ease = 0.06;
+let animating = false;
+
+window.addEventListener('wheel', function(e) {
+    e.preventDefault();
+    targetY += e.deltaY;
+    targetY = Math.max(0, Math.min(targetY, document.documentElement.scrollHeight - window.innerHeight));
+    if (!animating) {
+        animating = true;
+        smoothScroll();
+    }
+}, { passive: false });
+
+function smoothScroll() {
+    currentY += (targetY - currentY) * ease;
+    window.scrollTo(0, currentY);
+    if (Math.abs(targetY - currentY) > 0.5) {
+        requestAnimationFrame(smoothScroll);
+    } else {
+        currentY = targetY;
+        window.scrollTo(0, currentY);
+        animating = false;
+    }
+}
+
+
 /* ── Loader function ── */
 document.body.style.overflow = 'hidden';
 window.onload = function() {
@@ -196,18 +225,15 @@ if (citeDiv) {
 }
 
 
-/* ── SVG scroll draw ── */
-const drawPath = document.getElementById('draw-path');
+/* ── About cards slide in ── */
+const aboutCards = document.querySelectorAll('.about-card .about-content');
 
-if (drawPath) {
-    const length = drawPath.getTotalLength();
-    drawPath.style.strokeDasharray = length;
-    drawPath.style.strokeDashoffset = length;
-
-    window.addEventListener('scroll', () => {
-        const scrolled = window.scrollY;
-        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-        const progress = scrolled / maxScroll;
-        drawPath.style.strokeDashoffset = length * (1 - progress);
+const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
     });
-}
+}, { threshold: 0.4 });
+
+aboutCards.forEach(card => cardObserver.observe(card));

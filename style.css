@@ -461,6 +461,7 @@ header span {
     background: var(--card-hover-bg);
     border-color: var(--card-hover-border);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02);
 }
 
 .project-info {
@@ -603,31 +604,23 @@ header span {
     color: var(--text-primary);
 }
 
-/* ── SVG line ── */
-#scroll-line {
-    position: absolute;
-    top: 25.2%;
-    left: 37%;
-    transform: translateX(-50%);
-    pointer-events: none;
-    z-index: 0;
-    width: 51%;
-    height: auto;
-    opacity: 0.8;
-    z-index: -3;
+.about-card.left .about-content {
+    opacity: 0;
+    transform: translateX(-80px);
+    transition: opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s;
 }
 
-#draw-path {
-    stroke-dasharray: 10000;
-    stroke-dashoffset: 10000;
-    transition: stroke-dashoffset 0.1s linear;
-    stroke: var(--svg-normal);
-    animation: svgGlow 3s ease-in-out infinite;
+.about-card.right .about-content {
+    opacity: 0;
+    transform: translateX(80px);
+    transition: opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s;
 }
 
-@keyframes svgGlow {
-    0%, 100% { stroke: var(--svg-normal); }
-    50% { stroke: var(--svg-glow); }
+.about-card.left .about-content.visible,
+.about-card.right .about-content.visible {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s, background 0.5s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.5s cubic-bezier(0.23, 1, 0.32, 1), scale 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 /* ── Footer ── */
@@ -695,10 +688,6 @@ footer a:hover {
 }
 
 @media (max-width: 1800px) {
-    #scroll-line {
-        display: none;
-    }
-
     #pippzhome{
         display: none;
     }
@@ -708,6 +697,10 @@ footer a:hover {
 @media (max-width: 1024px) {
 
     #logo {
+        display: none;
+    }
+
+    #headerLogo {
         display: none;
     }
 
@@ -862,6 +855,11 @@ footer a:hover {
 
     .about-content::before {
         display: none;
+    }
+
+    .about-card.left .about-content,
+    .about-card.right .about-content {
+        transform: translateX(0);
     }
 
     /* Watermark */
