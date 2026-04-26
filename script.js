@@ -27,12 +27,24 @@ function smoothScroll() {
     }
 }
 
+window.addEventListener('load', function() {
+    currentY = window.scrollY;
+    targetY = window.scrollY;
+});
+
+window.addEventListener('scroll', function() {
+    if (!animating) {
+        currentY = window.scrollY;
+        targetY = window.scrollY;
+    }
+});
+
 
 /* ── Loader function ── */
 document.body.style.overflow = 'hidden';
 window.onload = function() {
     var loader = document.getElementById('loader');
-    var paths = document.querySelectorAll('.loader-path');
+    var paths = document.querySelectorAll('.loader-only-path');
     var lengths = [3000, 1000, 200, 2500, 800];
 
         setTimeout(function() {

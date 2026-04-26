@@ -137,10 +137,6 @@ body {
     transition: background 0.4s ease, opacity 0.5s ease;
 }
 
-main {
-    margin-bottom: 250px;
-}
-
 /* ── Scrollbar ── */
 ::-webkit-scrollbar {
     width: 10px;
@@ -631,10 +627,6 @@ header span {
 
 /* ── Footer ── */
 #contact {
-    position: absolute;
-    top: 95.5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -644,6 +636,7 @@ header span {
     width: 98%;
     height: 350px;
     border-radius: 30px;
+    margin-bottom: 10px;
 }
 
 #footerLogo {
