@@ -687,6 +687,10 @@ header span {
     #pippzhome{
         display: none;
     }
+
+    #contact {
+        margin-left: 13px;
+    }
 }
 
 /* ipad */
@@ -754,6 +758,10 @@ header span {
         position: static;
         transform: none;
         margin-right: 90px;
+    }
+
+    #contact {
+        margin-left: 8px;
     }
 }
 
@@ -848,6 +856,13 @@ header span {
     .pippztext {
         font-size: 40vw;
         opacity: 0.02;
+    }
+}
+
+@media (max-width: 600px) {
+    #contact {
+        margin-left: 0px;
+        width: 100%;
     }
 }
 
