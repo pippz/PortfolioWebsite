@@ -108,11 +108,10 @@ document.querySelector('#headerLogo').addEventListener('mouseenter', function() 
 });
 
 
-/* ── Theme icon ── https://www.youtube.com/watch?v=_gKEUYarehE&t=220s*/
+/* ── Theme button ── */
 const toggle = document.getElementById('theme-toggle');
 const icon = document.getElementById('theme-icon');
 
-// saves user prefecrence
 if (localStorage.getItem('theme') === 'light') {
     document.body.classList.add('light-mode');
     icon.className = 'fa-solid fa-moon';
@@ -123,7 +122,7 @@ toggle.addEventListener('click', () => {
     const isLight = document.body.classList.contains('light-mode');
     icon.className = isLight ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
-});
+})
 
 
 /* ── Typewriter effect Quote ── */

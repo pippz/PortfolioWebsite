@@ -55,6 +55,7 @@
 
     /* ──Watermarks── */
     --watermark: #ede8f5;
+    --watermark-glow: #e5d1ff;
 
     /* ──Theme── */
     --theme-button: #9061ffc7; 
@@ -117,6 +118,7 @@
 
     /* ──Watermarks── */
     --watermark: #00040e;
+    --watermark-glow: #000920;
 
     /* ──Theme── */
     --theme-button: #8fadee; 
@@ -213,8 +215,8 @@ header span {
 
 @keyframes wiggle {
     0%   { transform: rotate(0deg); }
-    25%  { transform: rotate(-10deg); }
-    50%  { transform: rotate(10deg); }
+    25%  { transform: rotate(-8deg); }
+    50%  { transform: rotate(8deg); }
     75%  { transform: rotate(-5deg); }
     100% { transform: rotate(0deg); }
 }
@@ -226,8 +228,8 @@ header span {
     padding: 12px 26px;
     border-radius: 999px;
     background: var(--nav-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid var(--nav-border);
     position: absolute;
     left: 47.5%;
@@ -317,32 +319,46 @@ header span {
 /* ── Theme button ── */ 
 #theme-toggle {
     position: fixed;
-    bottom: 55px;
-    right: 24px;
+    bottom: 14px;
+    right: 20px;
     z-index: 20;
     background: var(--nav-bg);
     border: 1px solid var(--nav-border);
-    color: var(--text-primary);
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
+    width: 64px;
+    height: 32px;
+    border-radius: 999px;
     cursor: pointer;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: background 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    padding: 3px;
+}
+
+#toggle-thumb {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--theme-button);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
-    backdrop-filter: blur(12px);
-    transition: background 0.2s ease, transform 0.3s ease;
+    font-size: 12px;
+    color: #fff;
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), background 0.2s ease;
+    transform: translateX(0);
 }
 
-#theme-toggle:hover {
+#toggle-thumb:hover {
+    background: var(--link-hover);
+}
+
+
+
+.light-mode #toggle-thumb {
+    transform: translateX(32px);
     background: var(--theme-button);
-    animation: spin 0.6s ease forwards;
-}
-
-@keyframes spin {
-    0%   { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
 }
 
 /* ── Explore text ── */
@@ -861,6 +877,10 @@ header span {
     }
 
     /* About */
+    .about-grid {
+        gap: 25px;
+    }
+
     .about-content {
         width: 95%;
         padding: 25px 20px;
