@@ -23,9 +23,8 @@ The goal was to build something visually distinctive without relying on framewor
 - JavaScript
 
 ## Projects Featured
-- Space Site
 - Portfolio (this site)
-- More coming soon — including a full stack To-Do app built with Python and Flask
+- More coming soon 
 
 ## Author
 **Pippz** — based in Italy
