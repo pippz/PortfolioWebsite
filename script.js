@@ -1,4 +1,3 @@
-
 /* ── Smooth momentum scroll ── */
 let currentY = window.scrollY;
 let targetY = window.scrollY;
